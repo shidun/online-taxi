@@ -1,0 +1,33 @@
+server:
+  port: 7900
+spring:
+  application:
+    name: eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka1:7900/eureka/,http://eureka2:7901/eureka/,http://eureka3:7902/eureka/
+---
+spring:
+  profiles: eureka1
+eureka:
+  instance:
+    hostname: eureka1
+server:
+  port: 7900
+---
+spring:
+  profiles: eureka2
+eureka:
+  instance:
+    hostname: eureka2
+server:
+  port: 7901
+---
+spring:
+  profiles: eureka3
+eureka:
+  instance:
+    hostname: eureka3
+server:
+  port: 7902
